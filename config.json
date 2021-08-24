@@ -1,0 +1,12 @@
+{
+  "schema": {
+    "source": "id, firstname, lastname, department, location, status",
+    "target": "employeeNumber, givenName, sn, departmentNumber, l, idautoStatus"
+  },
+  "placement": {
+    "001": "ou=HS,ou=People,dc=meta",
+    "002": "ou=MS,ou=People,dc=meta",
+    "003": "ou=ELEM,ou=People,dc=meta",
+    "exception": "ou=Exceptions,ou=People,dc=meta"
+  }
+}

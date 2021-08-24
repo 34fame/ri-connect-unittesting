@@ -1,0 +1,162 @@
+{
+  "tests": [
+    {
+      "name": "Basic Create",
+      "assert": {
+        "id": "1919191919",
+        "firstname": "Robert",
+        "lastname": "Smith",
+        "department": "001",
+        "location": "001",
+        "status": "A"
+      },
+      "expect": {
+        "departmentNumber": "001",
+        "employeeNumber": "1919191919",
+        "employeeType": "Staff",
+        "givenName": "Robert",
+        "idautoStatus": "A",
+        "l": "001",
+        "sn": "Smith",
+        "@dn": "cn=1919191919,ou=HS,ou=People,dc=meta",
+        "idautoID": "IGNORE",
+        "objectClass": "User",
+        "sAMAccountName": "1919191919",
+        "userPrincipalName": "1919191919@meta.local"
+      }
+    },
+    {
+      "name": "First Name Change",
+      "assert": {
+        "id": "1919191919",
+        "firstname": "Richard",
+        "lastname": "Smith",
+        "department": "001",
+        "location": "001",
+        "status": "A"
+      },
+      "match": {
+        "departmentNumber": "001",
+        "employeeNumber": "1919191919",
+        "employeeType": "Staff",
+        "givenName": "Robert",
+        "idautoStatus": "A",
+        "l": "001",
+        "sn": "Smith",
+        "@dn": "cn=1919191919,ou=HS,ou=People,dc=meta",
+        "objectClass": "User",
+        "sAMAccountName": "1919191919",
+        "userPrincipalName": "1919191919@meta.local"
+      },
+      "expect": {
+        "departmentNumber": "001",
+        "employeeNumber": "1919191919",
+        "employeeType": "Staff",
+        "givenName": "Richard",
+        "idautoStatus": "A",
+        "l": "001",
+        "sn": "Smith"
+      }
+    },
+    {
+      "name": "Status Change - Disable",
+      "assert": {
+        "id": "1919191919",
+        "firstname": "Richard",
+        "lastname": "Smith",
+        "department": "001",
+        "location": "001",
+        "status": "I"
+      },
+      "match": {
+        "departmentNumber": "001",
+        "employeeNumber": "1919191919",
+        "employeeType": "Staff",
+        "givenName": "Richard",
+        "idautoStatus": "A",
+        "l": "001",
+        "sn": "Smith",
+        "@dn": "cn=1919191919,ou=HS,ou=People,dc=meta",
+        "objectClass": "User",
+        "sAMAccountName": "1919191919",
+        "userPrincipalName": "1919191919@meta.local"
+      },
+      "expect": {
+        "departmentNumber": "001",
+        "employeeNumber": "1919191919",
+        "employeeType": "Staff",
+        "givenName": "Richard",
+        "idautoStatus": "I",
+        "l": "001",
+        "sn": "Smith"
+      }
+    },
+    {
+      "name": "Status Change - Disable",
+      "assert": {
+        "id": "1919191919",
+        "firstname": "Richard",
+        "lastname": "Smith",
+        "department": "001",
+        "location": "001",
+        "status": "A"
+      },
+      "match": {
+        "departmentNumber": "001",
+        "employeeNumber": "1919191919",
+        "employeeType": "Staff",
+        "givenName": "Richard",
+        "idautoStatus": "I",
+        "l": "001",
+        "sn": "Smith",
+        "@dn": "cn=1919191919,ou=HS,ou=People,dc=meta",
+        "objectClass": "User",
+        "sAMAccountName": "1919191919",
+        "userPrincipalName": "1919191919@meta.local"
+      },
+      "expect": {
+        "departmentNumber": "001",
+        "employeeNumber": "1919191919",
+        "employeeType": "Staff",
+        "givenName": "Richard",
+        "idautoStatus": "A",
+        "l": "001",
+        "sn": "Smith"
+      }
+    },
+    {
+      "name": "Department Change - Move",
+      "assert": {
+        "id": "1919191919",
+        "firstname": "Richard",
+        "lastname": "Smith",
+        "department": "002",
+        "location": "002",
+        "status": "A"
+      },
+      "match": {
+        "departmentNumber": "001",
+        "employeeNumber": "1919191919",
+        "employeeType": "Staff",
+        "givenName": "Richard",
+        "idautoStatus": "A",
+        "l": "001",
+        "sn": "Smith",
+        "@dn": "cn=1919191919,ou=HS,ou=People,dc=meta",
+        "objectClass": "User",
+        "sAMAccountName": "1919191919",
+        "userPrincipalName": "1919191919@meta.local"
+      },
+      "expect": {
+        "departmentNumber": "002",
+        "employeeNumber": "1919191919",
+        "employeeType": "Staff",
+        "givenName": "Richard",
+        "idautoStatus": "A",
+        "l": "002",
+        "sn": "Smith",
+        "@dn": "cn=1919191919,ou=MS,ou=People,dc=meta"
+      }
+    }
+  ]
+}
