@@ -1,7 +1,7 @@
 {
   "tests": [
     {
-      "name": "1+2",
+      "name": "Case 1",
       "assert": {
         "a": 1,
         "b": 2
@@ -9,12 +9,12 @@
       "expect": 3
     },
     {
-      "name": "'1'+'2'",
+      "name": "Case 2",
       "assert": {
         "a": "1",
         "b": "2"
       },
-      "expect": 3
+      "expect": "12"
     }
   ]
 }
